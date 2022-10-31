@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./",
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": true,
+    "resolveJsonModule": true,
+    // "isolatedModules": true, // 因为 esbuild 暂时不支持 enum，所以，暂时设置为 false
+    "isolatedModules": false,
+    "esModuleInterop": true,
+    "types": ["vite/client", "element-plus/global"],
+    "lib": ["esnext", "dom"],
+    "paths": {
+      "@/*": ["src/*"],
+      "@C/*": ["src/components/*"],
+      "@P/*": ["src/pages/*"],
+      "@A/*": ["src/assets/*"]
+    }
+  },
+  "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "references": [
+    {
+      "path": "./tsconfig.node.json"
+    }
+  ]
+}
